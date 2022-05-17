@@ -5,33 +5,25 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Hello React.JS
-         <br />
-         <br />
-         I'm very Hungry 
-        </p>
-
-        <Person></Person>
-        <Person></Person>
-        <Person></Person>
-        
+        <Person name="Tamim Iqbal" status="Batesman"></Person>
+        <Person name="Mushfiqur Rahim" status="Batesman & wicket kipper"></Person>
+        <Person name="Mostafizur Rahman" status="Boller"></Person>
       </header>
     </div>
   );
 }
 
-function Person () {
+function Person (props) {
   const personStyle = {
     border: '2px solid yellow',
     margin: '10px',
     padding: '5px'
   }
+  console.log(props);
   return(
     <div style = {personStyle}>
-      <h1>Name: Sakib Al Hasan</h1>
-      <h3>Hero of the year</h3>
+      <h1>Name: {props.name}</h1>
+      <h3>Status: {props.status}</h3>
     </div>
   )
 }
