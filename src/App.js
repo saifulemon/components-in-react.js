@@ -2,17 +2,28 @@ import logo from './logo.svg';
 import './App.css';
 
 function App () {
+  const nayoks = ['Anwar', 'Jafor', 'Alomgir', 'Salman', 'Bappi', 'Shuvo'];
   const products = [
     {name: 'Photoshop', price: '$99.99'},
     {name: 'Illustrator', price: '$65.21'},
-    {name: 'PDF Reader', price: '$6.00'}
+    {name: 'PDF Reader', price: '$6.00'},
+    {name: 'Skype', price: '$10.00'}
   ];
+  
   return (
     <div className="App">
       <header className="App-header">
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
+        <ul>
+          {
+            nayoks.map(nayok => <li>{nayok}</li>)
+          }
+          {
+            products.map(product => <li>{product.name}</li>)
+          }
+        </ul>
+        {
+          products.map(pd => <Product product={pd}></Product>)
+        }
 
         <Person name="Tamim Iqbal" status="Batesman"></Person>
         <Person name="Mushfiqur Rahim" status="Batesman & wicket kipper"></Person>
