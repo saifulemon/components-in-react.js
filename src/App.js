@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,6 +14,7 @@ function App () {
   return (
     <div className="App">
       <header className="App-header">
+        <Counter></Counter>
         <ul>
           {
             nayoks.map(nayok => <li>{nayok}</li>)
@@ -32,6 +34,20 @@ function App () {
     </div>
   );
 }
+
+function Counter () {
+const [count, setCount] = useState(0);
+const handleClick = () => setCount(count + 1);
+const handleClick2 = () => setCount(count - 1);
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleClick}>Increase</button>
+      <button onClick={handleClick2}>Decrease</button>
+    </div>
+  )
+}
+
 
 function Product (props) {
   const productStyle = {
